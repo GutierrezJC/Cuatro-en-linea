@@ -1,59 +1,50 @@
-# Cuatroenlinea
+# 4 en Línea
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+Juego de **4 en Línea** (Connect Four) implementado en Angular 20, usando Angular Signals para el manejo reactivo del estado.
 
-## Development server
+## ¿Cómo jugar?
 
-To start a local development server, run:
+1. Haz click en **"Iniciar partida"** para ingresar los nombres de los jugadores.
+2. Los jugadores se turnan haciendo click en una columna para soltar su ficha.
+3. El primero en conectar **4 fichas en línea** (horizontal, vertical o diagonal) gana.
+4. Si se llenan las 35 celdas sin ganador, el juego termina en empate.
 
-```bash
-ng serve
+## Tecnologías
+
+- **Angular 20** (componentes standalone)
+- **TypeScript 5.8**
+- **Angular Signals** (reactividad sin zones)
+- **Angular Material** (diálogos)
+- **Tailwind CSS 4** + **Flowbite**
+
+## Estructura del proyecto
+
+```
+src/app/
+├── components/
+│   ├── TableroComponent/     # Tablero de juego — renderiza la grilla 6x7
+│   ├── forms/
+│   │   ├── modal-general/    # Modal para ingresar nombres de jugadores
+│   │   └── modal-resultado/  # Modal de resultado (ganador / empate)
+│   └── footer/
+└── services/
+    └── juegologica.ts        # Lógica central: tablero, turnos, detección de ganador
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Detección de ganador
 
-## Code scaffolding
+El `JuegologicaService` evalúa 4 direcciones después de cada movimiento:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Horizontal
+- Vertical
+- Diagonal ↘ / ↖
+- Diagonal ↙ / ↗
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Correr localmente
 
 ```bash
-ng build
+npm install
+ng serve -o
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Requiere [Node.js](https://nodejs.org/) y [Angular CLI](https://angular.dev/tools/cli).
