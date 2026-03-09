@@ -1,0 +1,52 @@
+.tablero {
+  display: inline-block;
+  /*el display inlen blok es como una liga que de adepte al contenido */
+  background-color: #26cc05;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.fila {
+  display: flex;
+  /*se le aplica al div pero en realida aplica a sus etiquetas hijas */
+}
+
+.celda {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.vacia {
+  background-color: #1a1a2e;
+}
+
+.jugador1 {
+  background-color: red;
+}
+
+.jugador2 {
+  background-color: yellow;
+}
+
+.neutral {
+  background-color: #ffffff;
+}
+
+.turno1 .ficha.vacia:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.turno2 .ficha.vacia:hover {
+  background-color: yellow;
+  cursor: pointer;
+}

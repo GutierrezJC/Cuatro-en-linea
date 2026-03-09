@@ -1,0 +1,53 @@
+.titulo {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(255, 0, 0);
+    text-shadow: 3px 3px 0px #1a6b1a;
+    margin: 20px 0 0 0;
+    letter-spacing: 4px;
+}
+
+.titulo-numero {
+    font-size: 5rem;
+    color: #ffd900;
+    text-shadow: 3px 3px 0px #8B6914;
+}
+
+.contenedor {
+    background-color: #92e795;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    /* es la propiedad de flex/grid que pone espacio entre los elementos hijos sin afectar los bordes exteriores */
+    min-height: 55vh;
+    padding-top: 40px;
+}
+
+.boton-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton-inicio span {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#inicio {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 90px solid #4CAF50;
+    /* el color va en border-left porque el triangulo apunta a la derecha */
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+}

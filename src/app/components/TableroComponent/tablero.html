@@ -1,0 +1,15 @@
+
+<div class="tablero" [class.turno1]="turnoActual === 1" [class.turno2]="turnoActual === 2" (mouseleave)="columnaHover = -1"> <!-- SE EVALUA EN CADA CHAGE DETECCION POR ENDE LAS CLASES CABIAN -->
+
+  @for (filas of tablero; track $index) { <!-- recorreme el array principal que es un array de arrays y filas sala el valor de la fila  -->
+    <div class="fila">
+      @for (celdas of filas; track $index) { <!-- celdas saca el valor -->
+        <div class="celda" (click)="alguienClickeo($index)" (mouseenter)="columnaHover = $index"> <!-- son dos div -->
+          <div [class]="getClase(celdas, $index === columnaHover)"></div>
+        </div>
+      }
+    </div>
+    }
+
+</div>
+
